@@ -1,0 +1,22 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(metablastr)
+
+blast_test <- blast_genomes(
+    query = "data/prot.faa",
+    subject_genomes = "data/genome.fasta",
+    blast_type = "tblastn",
+    blast_output_path = "result"
+)
+
+# Only save the best hit
+extract_hit_seqs_from_genomes(blast_test[1,],
+                              subject_genomes = "data/genome.fasta",
+                              separated_by_genome = FALSE,
+                              file_name = "result/gene.fna")
+```
+

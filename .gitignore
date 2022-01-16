@@ -1,7 +1,9 @@
 # History files
 .Rhistory
 .Rapp.history
-
+*.html
+renv/*
+!renv/activate.R
 # Session Data files
 .RData
 
